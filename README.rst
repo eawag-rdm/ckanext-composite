@@ -4,27 +4,27 @@
 
 .. image:: https://travis-ci.org/espona/ckanext-composite.svg?branch=master
     :target: https://travis-ci.org/espona/ckanext-composite
-
+ 
 .. image:: https://coveralls.io/repos/espona/ckanext-composite/badge.svg
   :target: https://coveralls.io/r/espona/ckanext-composite
 
-.. image:: https://pypip.in/download/ckanext-composite/badge.svg
+.. image:: https://img.shields.io/pypi/dm/ckanext-composite.svg
     :target: https://pypi.python.org/pypi//ckanext-composite/
     :alt: Downloads
 
-.. image:: https://pypip.in/version/ckanext-composite/badge.svg
+.. image:: https://img.shields.io/pypi/v/ckanext-composite.svg
     :target: https://pypi.python.org/pypi/ckanext-composite/
     :alt: Latest Version
 
-.. image:: https://pypip.in/py_versions/ckanext-composite/badge.svg
+.. image:: https://img.shields.io/pypi/pyversions/ckanext-composite.svg
     :target: https://pypi.python.org/pypi/ckanext-composite/
     :alt: Supported Python versions
 
-.. image:: https://pypip.in/status/ckanext-composite/badge.svg
+.. image:: https://img.shields.io/pypi/status/ckanext-composite.svg
     :target: https://pypi.python.org/pypi/ckanext-composite/
     :alt: Development Status
 
-.. image:: https://pypip.in/license/ckanext-composite/badge.svg
+.. image:: https://img.shields.io/pypi/l/ckanext-composite.svg
     :target: https://pypi.python.org/pypi/ckanext-composite/
     :alt: License
 
@@ -36,7 +36,7 @@ ckanext-composite
    What does it do? What features does it have?
    Consider including some screenshots or embedding a video!
    
-Allows to store structured dataset metadata, single or multiple fields. Only one level of subfields is possible. The subfields can be basic text o choice dropboxes. Do not use dashes or numbers in the labels or values of fields.
+Allows to store structured dataset metadata, single or multiple fields. Only one level of subfields is possible. The subfields can be basic text, date type o choice dropboxes. Do not use dashes or numbers in the labels or values of fields.
 
 
 ------------
@@ -101,7 +101,28 @@ Add this to your schema.json file::
             "field_name": "email",
             "label": "Email",
             "form_placeholder": "joe@example.com"
-           }
+           },
+          {
+            "field_name": "date",
+            "label": "Date",
+            "preset": "date",
+            "form_placeholder": "yyyy-mm-mm"
+           },
+           {
+            "field_name": "identifier_scheme",
+            "label": "Scheme",
+            "preset": "select",
+            "choices": [
+              {
+                "value": "orcid",
+                "label": "ORCID"
+              },
+              {
+                "value": "isni",
+                "label": "ISNI"
+              }
+           ]
+         }
       ]
      }
      # Composite Repeating Field
